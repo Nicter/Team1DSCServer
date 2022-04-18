@@ -1,0 +1,11 @@
+/* This is the style.css for every webpage */
+/* You can style some elements with css designer "https://enjoycss.com" */
+
+html {
+    /* Set the font globally */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: rgb(66, 142, 255);
+}
