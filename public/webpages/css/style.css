@@ -2,31 +2,51 @@
 /* You can style some elements with css designer "https://enjoycss.com" */
 
 html {
-    /* Set the font globally */
-    font-family: Arial, Helvetica, sans-serif;
+  /* Set the font globally */
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
-    padding-left: 1%;
-    color: rgb(66, 142, 255);
+  padding-left: 1%;
+  color: rgb(66, 142, 255);
 }
 
 p {
-    padding-left: 2%;
-    width: 65%;
+  padding-left: 2%;
+  width: 65%;
+}
+
+.btn {
+  box-sizing: content-box;
+  cursor: pointer;
+  margin: 15px;
+  padding: 10px 15px;
+  border: 1px solid #018dc4;
+  border-radius: 20px;
+  font: normal 16px;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgb(66, 142, 255);
+  -webkit-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 1px rgba(15, 73, 168, 0.66);
+  transition: all 300ms ease;
+}
+
+.btn.effect:hover {
+    background-color: rgba(15, 73, 168);
 }
 
 footer {
-    /* Design of footer */
-    background: rgb(41, 46, 48);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    /* Height of the footer */
-    height: 25px;
-    /* Design of text */
-    color: rgb(159, 176, 200);
-    padding-left: 10px;
-    padding-top: 5px;
+  /* Design of footer */
+  background: rgb(41, 46, 48);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* Height of the footer */
+  height: 25px;
+  /* Design of text */
+  color: rgb(159, 176, 200);
+  padding-left: 10px;
+  padding-top: 5px;
 }
