@@ -1,19 +1,72 @@
 /* This is the style.css for every webpage */
 /* You can style some elements with css designer "https://enjoycss.com" */
 
+/* color theme */
+:root {
+  --main-color-0: #ffffff;
+  --main-color-1: black;
+  --main-color-2: #c60c0f;
+  --main-color-3: #ea5b0c;
+  --main-color-4: #b62584;
+}
+
 html {
   /* Set the font globally */
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 h1 {
   padding-left: 1%;
-  color: rgb(66, 142, 255);
+  color: var(--main-color-0);
+}
+
+h2 {
+  color: var(--main-color-1);
+}
+
+h3 {
+  color: var(--main-color-2);
+}
+
+h4 {
+  color: var(--main-color-3);
+}
+
+h5 {
+  color: var(--main-color-4);
 }
 
 p {
   padding-left: 2%;
   width: 65%;
+}
+
+pre {
+  width: 50px;
+  height: 700px;
+  background: var(--main-color-3);
+  margin-left: 20%;
+  float: right;
+}
+
+footer {
+  /* Design of footer */
+  background: rgb(41, 46, 48);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* Height of the footer */
+  height: 25px;
+  /* Design of text */
+  color: rgb(159, 176, 200);
+  padding-left: 10px;
+  padding-top: 5px;
 }
 
 .btn {
@@ -33,20 +86,5 @@ p {
 }
 
 .btn.effect:hover {
-    background-color: rgba(15, 73, 168);
-}
-
-footer {
-  /* Design of footer */
-  background: rgb(41, 46, 48);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  /* Height of the footer */
-  height: 25px;
-  /* Design of text */
-  color: rgb(159, 176, 200);
-  padding-left: 10px;
-  padding-top: 5px;
+  background-color: rgba(15, 73, 168);
 }
