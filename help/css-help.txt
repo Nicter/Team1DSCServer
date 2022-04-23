@@ -1,0 +1,16 @@
+//check if a statement can be used in the code !!!!
+https://caniuse.com
+//share of font-types on windows and mac
+https://www.cssfontstack.com
+//for converting font-file-types; be shure that the font you use is allowed to be used (watch the licence)
+https://www.fontsquirrel.com/tools/webfont-generator
+//if you want to use webfont
+https://fonts.google.com
+//Example for codeformating of html and css
+https://codeguide.co
+//a palete of standard css colors
+https://colours.neilorangepeel.com
+//create hight contrast colors to make the website better for visually impaired people.
+https://www.randoma11y.com
+//to generate a color template
+https://coolors.com
