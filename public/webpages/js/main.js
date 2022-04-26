@@ -1,10 +1,17 @@
 async function loadIntoTable(url, table) {
     const tableHead = table.querySelector("thead");
     const tableBody = table.querySelector("tbody");
-    // const response = await fetch("http://localhost/files/data.json");
-    const response = await fetch("https://openmensa.org/api/v2/canteens/70");
+    const response = await fetch("http://localhost/files/data.json");
+    // const response = await fetch("https://openmensa.org/api/v2/canteens/70");
     // console.log(data);
     const { headers, rows } = await response.json();
+    // let headers = [];
+    // let rows = [];
+    // const data = await response.json();
+    // JSON.parse(await response, (key, value) => {
+    //         headers.push(key);
+    //         rows.push(value);
+    //     });
     // const data = await response.text();
 
     // console.log(data);
