@@ -1,14 +1,14 @@
 async function loadIntoTable(url, table) {
     const tableHead = table.querySelector("thead");
     const tableBody = table.querySelector("tbody");
-    //const response = await fetch(url);
-    const data = await fetch("https://openmensa.org/api/v2/canteens/70");
-    console.log(data);
-    //const { headers, rows } = await response.json();
-    //const data = await response.text();
+    // const response = await fetch("http://localhost/files/data.json");
+    const response = await fetch("https://openmensa.org/api/v2/canteens/70");
+    // console.log(data);
+    const { headers, rows } = await response.json();
+    // const data = await response.text();
 
-    //console.log(data);
-    /*
+    // console.log(data);
+    
     tableHead.innerHTML = "<tr></tr>";
     tableBody.innerHTML = "";
 
@@ -28,8 +28,8 @@ async function loadIntoTable(url, table) {
         }
         tableBody.appendChild(rowElement);
     }
-    */
+    
 }
 
-loadIntoTable('./data.json', document.querySelector(".table")); //
+loadIntoTable('../data.json', document.querySelector(".table")); //
 
