@@ -1,42 +1,70 @@
 async function loadIntoTable(url, table) {
-    const tableHead = table.querySelector("thead");
-    const tableBody = table.querySelector("tbody");
-    const response = await fetch("http://localhost/files/data.json");
-    // const response = await fetch("https://openmensa.org/api/v2/canteens/70");
-    // console.log(data);
-    const { headers, rows } = await response.json();
-    // let headers = [];
-    // let rows = [];
-    // const data = await response.json();
-    // JSON.parse(await response, (key, value) => {
-    //         headers.push(key);
-    //         rows.push(value);
-    //     });
-    // const data = await response.text();
+  const tableHead = table.querySelector("thead");
+  const tableBody = table.querySelector("tbody");
 
-    // console.log(data);
-    
-    tableHead.innerHTML = "<tr></tr>";
-    tableBody.innerHTML = "";
+  // for testing the table load
+  // const response = await fetch("http://localhost/files/data.json");
+  // const { headers, rows } = await response.json();
 
-    for (const headerText of headers) { // for each header element
-        const headerElement = document.createElement("th"); // a header element is generated in the html
-        headerElement.textContent = headerText;
-        tableHead.querySelector("tr").appendChild(headerElement); // and put into the header row
+  // load the API Data by OpenMensa (documentation: https://doc.openmensa.org/api/v2/canteens/)
+  let response = await fetch(url);
+  const data = await response.json();
+
+  //the data by the API is reorganized to use for the tablegeneration
+  let headers;
+  let rows = [];
+  let isFirst = true;
+  //forEach element split the information into keys and values
+  data.forEach((e) => {
+    let keys = [];
+    let values = [];
+    for (const [key, value] of Object.entries(e)) {
+      keys.push(key);
+      //if a value is an Array convert it to a single value (string)
+      if (Array.isArray(value)) {
+        values.push(value.join());
+      } else {
+        values.push(value);
+      }
     }
-
-    for (const row of rows) { // for each header element
-        const rowElement = document.createElement("tr")// a element is generated in the html
-
-        for (const cellText of row) {
-            const cellElement = document.createElement("td");
-            cellElement.textContent = cellText;
-            rowElement.appendChild(cellElement);
-        }
-        tableBody.appendChild(rowElement);
+    //check if the keys of an element in data is different then the others
+    if (isFirst != true && headers.join() != keys.join()) {
+      console.log("There are differnt keys per object.");
+    } else {
+      isFirst = false;
     }
-    
+    // the header should always be the same
+    headers = keys;
+    //add the data of e
+    rows.push(values);
+  });
+
+  // with headers (namesensitive) and rows (namesensitive) generate table elements and add them to the html
+  tableHead.innerHTML = "<tr></tr>";
+  tableBody.innerHTML = "";
+
+  for (const headerText of headers) {
+    // for each header element
+    const headerElement = document.createElement("th"); // a header element is generated in the html
+    headerElement.textContent = headerText;
+    tableHead.querySelector("tr").appendChild(headerElement); // and put into the header row
+  }
+
+  for (const row of rows) {
+    // for each header element
+    const rowElement = document.createElement("tr"); // a element is generated in the html
+
+    for (const cellText of row) {
+      const cellElement = document.createElement("td");
+      cellElement.textContent = cellText;
+      rowElement.appendChild(cellElement);
+    }
+    tableBody.appendChild(rowElement);
+  }
 }
 
-loadIntoTable('../data.json', document.querySelector(".table")); //
-
+loadIntoTable(
+  "https://openmensa.org/api/v2/canteens",
+  document.querySelector(".table")
+); 
+// link to get a meal by the TH Koeln mensa deutz https://openmensa.org/api/v2/canteens/387/days/2022-04-27/meals
