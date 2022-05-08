@@ -63,8 +63,12 @@ async function loadIntoTable(url, table) {
   }
 }
 
+// loadIntoTable(
+//   "https://openmensa.org/api/v2/canteens",
+//   document.querySelector(".table")
+// ); 
 loadIntoTable(
-  "https://openmensa.org/api/v2/canteens",
+  "https://openmensa.org/api/v2/canteens/387/days/2022-05-03/meals",
   document.querySelector(".table")
 ); 
 // link to get a meal by the TH Koeln mensa deutz https://openmensa.org/api/v2/canteens/387/days/2022-04-27/meals
