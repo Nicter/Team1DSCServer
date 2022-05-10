@@ -1,49 +1,56 @@
 /* This CSS is specific for the html with the same name */
 
 body {
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 p {
     width: 800px;
     /* font-size: 20px; */
 }
-pre.first{
+
+pre.first {
     width: 30px;
     height: 1500px;
     background: var(--main-color-4);
     margin-right: 3%;
     float: right;
 }
-pre.secound{
+
+pre.secound {
     width: 30px;
     height: 1000px;
     background: var(--main-color-2);
     margin-right: 0;
     float: right;
 }
-pre.third{
+
+pre.third {
     width: 30px;
     height: 500px;
     background: var(--main-color-3);
     margin-right: 0;
     float: right;
 }
+
 .background {
     background-color: white;
     margin-bottom: 30px;
 }
+
 .background::before {
-  content: "";
-  background-size: cover;
-  position: fixed;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  background-image: url("https://www.kstw.de/fileadmin/_processed_/b/e/csm_3_Mensa_Deutz__1__e8167afff3.jpg");
-  opacity: 0.5;
+    content: "";
+    background-size: cover;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-image: url("https://www.kstw.de/fileadmin/_processed_/b/e/csm_3_Mensa_Deutz__1__e8167afff3.jpg");
+    opacity: 0.5;
 }
-.background > * {
+
+.background>* {
     position: relative;
 }

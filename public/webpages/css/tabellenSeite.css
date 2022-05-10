@@ -1,0 +1,33 @@
+:root{
+  --h2-height: 25px;
+}
+
+body {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+h2{
+  font-size: var(--h2-height);
+}
+
+.btn {
+  font-size: 16px;
+  height: var(--h2-height);
+  color: black;
+  background-color: deepskyblue;
+  width: 10rem;
+  border: 0.1rem darkblue solid;
+}
+
+.header {
+  text-align: center;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
