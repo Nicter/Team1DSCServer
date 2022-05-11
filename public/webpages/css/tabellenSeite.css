@@ -1,4 +1,4 @@
-:root{
+:root {
   --h2-height: 25px;
 }
 
@@ -7,17 +7,21 @@ body {
   margin: 0 auto;
 }
 
-h2{
+h2 {
   font-size: var(--h2-height);
 }
 
 .btn {
-  font-size: 16px;
-  height: var(--h2-height);
-  color: black;
-  background-color: deepskyblue;
-  width: 10rem;
-  border: 0.1rem darkblue solid;
+  background-color: #4CAF50;
+  font-size: 20px;
+  padding: 14px 40px;
+  border-radius: 8px;
+  border: 2px solid #4CAF50;
+  transition-duration: 0.2s;
+}
+
+.btn:hover {
+  background-color: #8dff90;
 }
 
 .header {
@@ -30,4 +34,8 @@ h2{
 
 .right {
   float: right;
+}
+
+.middle {
+  display: inline-block;
 }
