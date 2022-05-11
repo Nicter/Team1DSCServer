@@ -11,15 +11,22 @@
 </head>
 
 <body>
-    <h1> Hallo</h1>
+    <h1> Speiseplan</h1>
+
     <div class="header">
-        <h2 class="header"><button class="btn left">Vor</button>Woche<button class="btn right">Zurück</button></h2>
+        <button id="back" class="btn left">Zurück</button>
+        <h2 id="menu" class="middle">Woche </h2>
+        <button id="vor" onclick="changeDate()" class="btn right">Vor</button>
     </div>
+
     <table class="table">
         <thead></thead>
         <tbody></tbody>
     </table>
-    <script src="../js/main.js"></script>
+
+    <script src="../js/main.js">
+    </script>
+
 </body>
 
 </html>
