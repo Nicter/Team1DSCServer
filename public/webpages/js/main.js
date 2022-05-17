@@ -1,3 +1,5 @@
+//const { Console } = require("console");
+
 async function loadIntoTable(url, table) {
   const tableHead = table.querySelector("thead");
   const tableBody = table.querySelector("tbody");
@@ -63,14 +65,17 @@ async function loadIntoTable(url, table) {
   }
 }
 
-async function fill() {
+async function fill(offset) {
   let todayDate = new Date(); // getting todays date for url
+  todayDate.setDate(todayDate.getDate() + offset);
   let dateString = todayDate.toISOString().slice(0, 10); // converting date to string
   loadIntoTable("https://openmensa.org/api/v2/canteens/387/days/" + dateString + "/meals", // loading table with date
     document.querySelector(".table"));
-  document.getElementById("menu").innerHTML(dateString); //funktioniert noch nicht
+  document.getElementById("menu").innerHTML = dateString; //funktioniert jetzt
 }
 
-fill();
+let offset = 0;
+let buttonback = document.getElementById("back").addEventListener("click", function () { fill(offset -= 1) });
+let buttonvor = document.getElementById("vor").addEventListener("click", function () { fill(offset += 1) });
 
 //"https://openmensa.org/api/v2/canteens/387/days/2022-05-03/meals"
